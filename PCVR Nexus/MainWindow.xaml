@@ -3,10 +3,34 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PCVR_Nexus"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="PCVR Nexus" Height="600" Width="800"
+        Background="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <!-- Side Menu -->
+        <StackPanel Grid.Column="0" Background="#333" VerticalAlignment="Stretch">
+            <Button Content="Game Settings" Height="40" Margin="10"/>
+            <Button Content="Tray Tool" Height="40" Margin="10"/>
+            <Button Content="Power Options" Height="40" Margin="10"/>
+            <Button Content="Service &amp; Startup" Height="40" Margin="10"/>
+            <Button Content="Log Window" Height="40" Margin="10"/>
+            <Button Content="Advanced" Height="40" Margin="10"/>
+            <Button Content="Quest Link" Height="40" Margin="10"/>
+        </StackPanel>
+
+        <!-- Main Content -->
+        <Grid Grid.Column="1" Margin="10">
+            <!-- Status Section -->
+            <StackPanel VerticalAlignment="Top">
+                <TextBlock Text="OpenXR Status: Oculus/Steam" FontSize="16" Foreground="White" Margin="0,0,0,10"/>
+                <TextBlock Text="SteamVR Version: x.x.x" FontSize="16" Foreground="White" Margin="0,0,0,10"/>
+                <TextBlock Text="Connection: Oculus Dash Link/Steam Link" FontSize="16" Foreground="White" Margin="0,0,0,10"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
